@@ -1,7 +1,5 @@
  **A modern, futuristic landing page for Liveupx Cloud Suite - Where Projects, Clients, and Teams Align**
 
-[![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?styleo/badge/s://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&.shields.io/*single-page, futuristic landing page** designed for **Liveupx Cloud Suite**, a comprehensive business management platform. The page showcases five different pricing plans, powerful add-ons, and contact information for both European and global operations.
-
 ### ✨ Key Highlights
 - **GDPR Compliant** - Hosted on EU servers
 - **Unified Business Platform** - CRM, Project Management, HR, and more
