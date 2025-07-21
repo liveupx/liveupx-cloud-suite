@@ -1,5 +1,7 @@
  **A modern, futuristic landing page for Liveupx Cloud Suite - Where Projects, Clients, and Teams Align**
 
+ DEMO - https://liveupx-cloud-suite.vercel.app
+
 ### ✨ Key Highlights
 - **GDPR Compliant** - Hosted on EU servers
 - **Unified Business Platform** - CRM, Project Management, HR, and more
