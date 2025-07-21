@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liveupx Cloud Suite - Unified Business Platform | GDPR Compliant</title>
+    <meta name="description" content="Power your entire business with Liveupx Cloud Suite. Project management, CRM, HR, and more in one unified platform. GDPR compliant, EU hosted.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --secondary-blue: #1e40af;
+            --accent-orange: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --border-light: #e5e7eb;
+            --success-green: #10b981;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .header-cta {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .header-cta:hover {
+            background: var(--secondary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 48px;
+            transition: background 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--secondary-blue);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--white);
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .trust-item i {
+            color: var(--success-green);
+            font-size: 1.125rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 64px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-blue);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 4px 16px;
+            border-radius: 16px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .plan-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .plan-price {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 4px;
+        }
+
+        .plan-period {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            font-size: 0.875rem;
+        }
+
+        .plan-description {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+
+        .features-list {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .features-list li {
+            padding: 6px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--success-green);
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .select-plan {
+            width: 100%;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .select-plan:hover {
+            background: var(--secondary-blue);
+        }
+
+        .select-plan.secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .select-plan.secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Add-ons Section */
+        .addons {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .addon-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .addon-item:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .addon-item i {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            width: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 80px 0;
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact .section-subtitle {
+            color: #9ca3af;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-card h3 {
+            color: var(--accent-orange);
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-card p {
+            margin-bottom: 8px;
+            color: #d1d5db;
+        }
+
+        .contact-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .contact-cta a {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 8px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .contact-cta a:hover {
+            background: #d97706;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-light);
+            padding: 32px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .trust-items {
+                gap: 24px;
+            }
+            
+            .contact-cta a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Liveupx</a>
+                <a href="#contact" class="header-cta">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Power Your Entire Business<br>in One Unified Platform</h1>
+            <p class="subtitle">Where Projects, Clients, and Teams Align. Liveupx Suite provides everything SMEs, agencies, and professional service providers need to thrive in the EU market.</p>
+            <a href="#pricing" class="hero-cta">View Pricing Plans</a>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>GDPR Compliant</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-server"></i>
+                    <span>EU Hosted</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-backup"></i>
+                    <span>Automated Backups</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title fade-in">Choose Your Perfect Plan</h2>
+            <p class="section-subtitle fade-in">All plans include ongoing maintenance, deployment, and localized EU support</p>
+            
+            <div class="pricing-grid fade-in">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <div class="plan-icon">✨</div>
+                    <h3 class="plan-name">Starter</h3>
+                    <div class="plan-price">€25</div>
+                    <div class="plan-period">per month or €250/year</div>
+                    <p class="plan-description">Perfect for small teams getting started</p>
+                    <ul class="features-list">
+                        <li>100 emails/day</li>
+                        <li>Subdomain: yourcompany.liveupx.eu</li>
+                        <li>1 Payment Gateway</li>
+                        <li>Invoicing & Proposals</li>
+                        <li>Project & Task Management</li>
+                        <li>Client Portal & Dashboards</li>
+                        <li>Support Ticket System</li>
+                        <li>Knowledge Base</li>
+                        <li>Calendar & Activity Logs</li>
+                        <li>PDF/CSV/Excel Export</li>
+                        <li>Video Tutorials</li>
+                        <li>2-3 Day Deployment</li>
+                    </ul>
+                    <button class="select-plan" onclick="selectPlan('Starter')">Get Started</button>
+                </div>
+
+                <!-- Growth Plan -->
+                <div class="pricing-card">
+                    <div class="plan-icon">📈</div>
+                    <h3 class="plan-name">Growth</h3>
+                    <div class="plan-price">€49</div>
+                    <div class="plan-period">per month or €499/year</div>
+                    <p class="plan-description">Ideal for growing businesses</p>
+                    <ul class="features-list">
+                        <li>200 emails/day</li>
+                        <li>Custom domain (crm.yourdomain.com)</li>
+                        <li>Custom color branding</li>
+                        <li>Email template editing</li>
+                        <li>Staff Management</li>
+                        <li>Accounting & Bookkeeping</li>
+                        <li>Advanced Lead Filters</li>
+                        <li>Affiliate Management</li>
+                        <li>Asset Management</li>
+                        <li>Advanced To-Do Manager</li>
+                        <li>Dynamic Customized Themes</li>
+                        <li>Advanced Automation</li>
+                    </ul>
+                    <button class="select-plan" onclick="selectPlan('Growth')">Select Growth</button>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="pricing-card featured">
+                    <div class="plan-icon">🚀</div>
+                    <h3 class="plan-name">Professional</h3>
+                    <div class="plan-price">€79</div>
+                    <div class="plan-period">per month or €799/year</div>
+                    <p class="plan-description">Best for professional services</p>
+                    <ul class="features-list">
+                        <li>300 emails/day</li>
+                        <li>AWS S3 Integration</li>
+                        <li>SMS Manager Module</li>
+                        <li>Campaign Builder</li>
+                        <li>Appointment Scheduling</li>
+                        <li>Drag & Drop Email Builder</li>
+                        <li>Zoom Integration</li>
+                        <li>Advanced Timesheet Manager</li>
+                        <li>Client Feedback System</li>
+                        <li>Google Lead Finder</li>
+                        <li>Slack & Telegram Integration</li>
+                        <li>Fleet Management</li>
+                        <li>KYC Compliance Export</li>
+                        <li>Custom JS/CSS Module</li>
+                    </ul>
+                    <button class="select-plan" onclick="selectPlan('Professional')">Select Professional</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="plan-icon">📏</div>
+                    <h3 class="plan-name">Enterprise</h3>
+                    <div class="plan-price">€149</div>
+                    <div class="plan-period">per month or €1499/year</div>
+                    <p class="plan-description">Complete business solution</p>
+                    <ul class="features-list">
+                        <li>400 emails/day</li>
+                        <li>Full HR & Payroll System</li>
+                        <li>Inventory Management</li>
+                        <li>Purchase Orders & Vendors</li>
+                        <li>Recruitment Module</li>
+                        <li>Deal Pipelines & Automation</li>
+                        <li>Fleet & Logistics</li>
+                        <li>REST API + GraphQL</li>
+                        <li>WhatsApp CRM Module</li>
+                        <li>Custom Dashboard Builder</li>
+                        <li>Internal Wiki</li>
+                        <li>Document Management</li>
+                        <li>Marketing Automation</li>
+                        <li>Landing Page Builder</li>
+                    </ul>
+                    <button class="select-plan" onclick="selectPlan('Enterprise')">Select Enterprise</button>
+                </div>
+
+                <!-- White-Label Suite -->
+                <div class="pricing-card">
+                    <div class="plan-icon">🚡</div>
+                    <h3 class="plan-name">White-Label</h3>
+                    <div class="plan-price">€249+</div>
+                    <div class="plan-period">Starting price - Contact Sales</div>
+                    <p class="plan-description">Fully branded for agencies</p>
+                    <ul class="features-list">
+                        <li>Full white-label branding</li>
+                        <li>Custom domain & login</li>
+                        <li>Multitenancy support</li>
+                        <li>AI Writer (OpenAI powered)</li>
+                        <li>Zapier Integration</li>
+                        <li>Mobile Apps (all platforms)</li>
+                        <li>E-commerce Integrations</li>
+                        <li>PDF Customizer</li>
+                        <li>Diagram Editor</li>
+                        <li>SaaS Ready Features</li>
+                        <li>Developer API Toolkit</li>
+                        <li>Multilingual UI</li>
+                        <li>Live Chat & Support Desk</li>
+                        <li>Team Collaboration Tools</li>
+                    </ul>
+                    <button class="select-plan secondary" onclick="contactSales('White-Label')">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-ons Section -->
+    <section class="addons">
+        <div class="container">
+            <h2 class="section-title fade-in">Powerful Add-Ons Available</h2>
+            <p class="section-subtitle fade-in">Extend your platform with these popular integrations and features</p>
+            
+            <div class="addons-grid fade-in">
+                <div class="addon-item">
+                    <i class="fab fa-google"></i>
+                    <span>Google Workspace (2-Way Sync)</span>
+                </div>
+                <div class="addon-item">
+                    <i class="fas fa-calculator"></i>
+                    <span>QuickBooks Online Integration</span>
+                </div>
+                <div class="addon-item">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook/Instagram Lead Integration</span>
+                </div>
+                <div class="addon-item">
+                    <i class="fas fa-video"></i>
+                    <span>LiveSmart Video Chat</span>
+                </div>
+                <div class="addon-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Android/Web Suite App Conversion</span>
+                </div>
+                <div class="addon-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Teleman Telemarketing Integration</span>
+                </div>
+                <div class="addon-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Lead Scoring & Routing Logic</span>
+                </div>
+                <div class="addon-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp Marketing Bot</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Ready to Get Started?</h2>
+            <p class="section-subtitle fade-in">Contact our team for custom deployments, integrations, or enterprise solutions</p>
+            
+            <div class="contact-grid fade-in">
+                <div class="contact-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Liveupx Europe</h3>
+                    <p><strong>Address:</strong> Blasewitzer Str. 12, 01307 Dresden, Germany</p>
+                    <p><strong>Contact:</strong> davide@liveupx.eu</p>
+                    <p><strong>Phone:</strong> +49-176 71523951</p>
+                    <p><strong>Website:</strong> liveupx.eu</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-globe"></i> Liveupx Global</h3>
+                    <p><strong>Address:</strong> KP I, Greater Noida, Uttar Pradesh 201310, IN</p>
+                    <p><strong>Contact:</strong> Jay - info@liveupx.com</p>
+                    <p><strong>Phone:</strong> +91-7060371701</p>
+                    <p><strong>Website:</strong> liveupx.com</p>
+                </div>
+            </div>
+            
+            <div class="contact-cta fade-in">
+                <a href="mailto:help@liveupx.com">
+                    <i class="fas fa-envelope"></i> Email Support
+                </a>
+                <a href="https://www.liveupx.com" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Visit Website
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Liveupx Cloud Suite. All rights reserved. | Empowering European businesses with unified cloud solutions.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Plan selection function
+        function selectPlan(planName) {
+            const subject = encodeURIComponent(`${planName} Plan Inquiry`);
+            const body = encodeURIComponent(`I'm interested in the ${planName} plan. Please provide more details about getting started.`);
+            window.location.href = `mailto:help@liveupx.com?subject=${subject}&body=${body}`;
+        }
+
+        // Contact sales function
+        function contactSales(planName) {
+            const subject = encodeURIComponent(`${planName} Suite Inquiry`);
+            const body = encodeURIComponent(`I'm interested in the ${planName} suite. Please contact me to discuss pricing and implementation.`);
+            window.location.href = `mailto:help@liveupx.com?subject=${subject}&body=${body}`;
+        }
+
+        // Add loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
